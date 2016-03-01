@@ -24,23 +24,23 @@ namespace EPiServerSitePages.Models.Properties
              {
                  var value = base.Value as string;
                  if (value == null) { return null; }
-                 return JsonConvert.DeserializeObject<IEnumerable<DescriptionItem>>(value);
-                 //JavaScriptSerializer serializer = new JavaScriptSerializer();
-                 //return serializer.Deserialize(value, typeof(IEnumerable<DescriptionItem>));
-             }
-             set
+                 //return JsonConvert.DeserializeObject<IEnumerable<DescriptionItem>>(value);
+                 JavaScriptSerializer serializer = new JavaScriptSerializer();
+                 return serializer.Deserialize(value, typeof(IEnumerable<DescriptionItem>));
+            }
+            set
              {
                  if (value is IEnumerable<DescriptionItem>)
                  {
-                    JsonConvert.SerializeObject(value, Formatting.Indented,
-                        new JsonSerializerSettings
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
-                     //JavaScriptSerializer serializer = new JavaScriptSerializer();
-                     //base.Value = serializer.Serialize(value);
-                 }
-                 else { base.Value = value; }
+                    //JsonConvert.SerializeObject(value, Formatting.Indented,
+                    //    new JsonSerializerSettings
+                    //    {
+                    //        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    //    });
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    base.Value = serializer.Serialize(value);
+                }
+                else { base.Value = value; }
              }
          }
      }
