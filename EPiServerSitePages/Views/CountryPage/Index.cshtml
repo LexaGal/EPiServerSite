@@ -1,0 +1,9 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EPiServerSitePages.Models.Pages.CountryPage
+
+<div>
+  @Html.PropertyFor(m => m.CountryName)
+  @Html.PropertyFor(m => m.CountrySquare)
+</div>

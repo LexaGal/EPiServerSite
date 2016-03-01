@@ -1,0 +1,9 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EPiServerSitePages.Models.Pages.RegionPage
+
+<div>
+    @Html.PropertyFor(m => m.RegionName)
+    @Html.PropertyFor(m => m.RegionSquare)
+</div>

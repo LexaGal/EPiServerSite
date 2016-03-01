@@ -1,0 +1,26 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EPiServerSitePages.Models.Pages.DescriptionPage
+
+<div>
+    @{ 
+
+        int mrgn = 0;
+        int i = 1;
+        foreach (var p in Model.Block.DescriptionItems)
+        {
+            switch (p.PageType)
+            {
+                case "CountryPage": mrgn = 0; break;
+                case "RegionPage": mrgn = 30; break;
+                case "CityPage": mrgn = 60; break;
+            }
+            <div style="margin-left: @mrgn;">
+                * @Html.DisplayFor(m => p.Item)
+                @Html.PageLink(p.PageReference)  
+            </div>
+            i++;
+        }
+    }
+</div>

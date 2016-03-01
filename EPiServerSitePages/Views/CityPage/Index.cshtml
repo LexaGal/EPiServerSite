@@ -1,0 +1,10 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EPiServerSitePages.Models.Pages.CityPage
+
+
+<div>
+    @Html.PropertyFor(m => m.CityName)
+    @Html.PropertyFor(m => m.CitySquare)
+</div>
