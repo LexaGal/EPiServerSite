@@ -24,19 +24,19 @@ namespace EPiServerSitePages.Controllers
 
             foreach (var countryPage in countryPages)
             {
-                list.Add(new DescriptionItem() { PageName = countryPage.Name, PageType = countryPage.PageTypeName, ItemName = (countryPage as CountryPage).CountryName, ItemSquare = (countryPage as CountryPage).CountrySquare });//, PageReference = countryPage.LinkURL });// ContentLink.ToPageReference()});
+                list.Add(new DescriptionItem() { PageName = countryPage.Name, PageType = countryPage.PageTypeName, ItemName = (countryPage as CountryPage).CountryName, ItemSquare = (countryPage as CountryPage).CountrySquare, PageReference = countryPage.LinkURL });// ContentLink.ToPageReference()});
                 
                 PageDataCollection regionPages = DataFactory.Instance.FindPagesWithCriteria(countryPage.ContentLink.ToPageReference(), InitPropertyCriteriaCollection("RegionPage"));
 
                 
                 foreach (var regionPage in regionPages)
                 {
-                    list.Add(new DescriptionItem() { PageName = regionPage.Name, PageType = regionPage.PageTypeName, ItemName = (regionPage as RegionPage).RegionName, ItemSquare = (regionPage as RegionPage).RegionSquare });//, PageReference = regionPage.StaticLinkURL }); // ContentLink.ToPageReference() });
+                    list.Add(new DescriptionItem() { PageName = regionPage.Name, PageType = regionPage.PageTypeName, ItemName = (regionPage as RegionPage).RegionName, ItemSquare = (regionPage as RegionPage).RegionSquare, PageReference = regionPage.StaticLinkURL }); // ContentLink.ToPageReference() });
                     PageDataCollection cityPages = DataFactory.Instance.FindPagesWithCriteria(regionPage.ContentLink.ToPageReference(), InitPropertyCriteriaCollection("CityPage"));
                     
                     foreach (var cityPage in cityPages)
                     {
-                        list.Add(new DescriptionItem() { PageName = cityPage.Name, PageType = cityPage.PageTypeName, ItemName = (cityPage as CityPage).CityName, ItemSquare = (cityPage as CityPage).CitySquare });//, PageReference = cityPage.LinkURL }); // ContentLink.ToPageReference() });
+                        list.Add(new DescriptionItem() { PageName = cityPage.Name, PageType = cityPage.PageTypeName, ItemName = (cityPage as CityPage).CityName, ItemSquare = (cityPage as CityPage).CitySquare, PageReference = cityPage.LinkURL }); // ContentLink.ToPageReference() });
                     }
                 }
             }

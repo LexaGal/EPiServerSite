@@ -8,14 +8,11 @@ using System.Web.Mvc;
 
 namespace EPiServerSitePages.Controllers
 {
-    namespace MyEPiServerSiteMVC.Controllers
+    public class CountryPageController : PageController<CountryPage>
     {
-        public class CountryPageController : PageController<CountryPage>
+        public ActionResult Index(CountryPage currentPage)
         {
-            public ActionResult Index(CountryPage currentPage)
-            {
-                return View(currentPage);
-            }
+            return View(currentPage);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace EPiServerSitePages.Models.Blocks
         public String ItemName { get; set; }
         public String ItemSquare { get; set; }
         public String Item => this.ToString();
-        //public String PageReference { get; set; }
+        public String PageReference { get; set; }
 
         public override string ToString()
         {

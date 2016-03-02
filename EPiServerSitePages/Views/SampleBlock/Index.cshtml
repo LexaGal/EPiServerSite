@@ -1,0 +1,10 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EPiServerSitePages.Models.Blocks.SampleBlock
+
+<div>
+    @Html.PropertyFor(m => m.Root)
+    @Html.PropertyFor(m => m.Count)
+    @Html.PropertyFor(m => m.Heading)
+</div>

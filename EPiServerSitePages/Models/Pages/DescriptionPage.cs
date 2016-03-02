@@ -4,7 +4,6 @@ using EPiServer.DataAnnotations;
 using EPiServer.Web.WebControls;
 using EPiServerSitePages.Models.Blocks;
 using EPiServerSitePages.Models.Properties;
-using EpiSS.Models.Blocks;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
